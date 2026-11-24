@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Pricing Cards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="intro">
+      <h1>Choose your plan</h1>
+      <p>Simple pricing that grows with you. Switch billing or filter plans to compare.</p>
+    </header>
+
+    <!-- Monthly / Yearly toggle -->
+    <div class="billing">
+      <span class="billing-label is-active" id="label-monthly">Monthly</span>
+      <button
+        id="billing-toggle"
+        class="switch"
+        role="switch"
+        aria-checked="false"
+        aria-label="Switch between monthly and yearly billing"
+      >
+        <span class="switch-knob"></span>
+      </button>
+      <span class="billing-label" id="label-yearly">
+        Yearly <span class="save-pill">Save 20%</span>
+      </span>
+    </div>
+
+    <!-- Filter buttons -->
+    <div class="filters" role="group" aria-label="Filter plans">
+      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" data-filter="basic" aria-pressed="false">Basic</button>
+      <button class="filter-btn" data-filter="premium" aria-pressed="false">Premium</button>
+    </div>
+
+    <!-- Cards -->
+    <section class="cards" id="cards">
+
+      <article class="card" data-category="basic" data-monthly="10" data-yearly="96" data-name="Starter">
+        <div class="card-icon" aria-hidden="true">🌱</div>
+        <h2 class="card-title">Starter</h2>
+        <p class="card-desc">Perfect for individuals just getting started.</p>
+        <div class="price">
+          <span class="price-currency">$</span>
+          <span class="price-amount">10</span>
+          <span class="price-period">/month</span>
+        </div>
+        <p class="save-note"></p>
+        <ul class="features">
+          <li>1 project</li>
+          <li>Basic analytics</li>
+          <li>Community support</li>
+          <li>1 GB storage</li>
+        </ul>
+        <button class="btn btn-outline">Choose Starter</button>
+      </article>
+
+      <article class="card" data-category="basic" data-monthly="20" data-yearly="192" data-name="Standard">
+        <div class="card-icon" aria-hidden="true">🚀</div>
+        <h2 class="card-title">Standard</h2>
+        <p class="card-desc">Great for freelancers and small teams.</p>
+        <div class="price">
+          <span class="price-currency">$</span>
+          <span class="price-amount">20</span>
+          <span class="price-period">/month</span>
+        </div>
+        <p class="save-note"></p>
+        <ul class="features">
+          <li>5 projects</li>
+          <li>Advanced analytics</li>
+          <li>Email support</li>
+          <li>10 GB storage</li>
+        </ul>
+        <button class="btn btn-outline">Choose Standard</button>
+      </article>
+
+      <article class="card popular" data-category="premium" data-monthly="40" data-yearly="384" data-name="Pro">
+        <span class="badge">⭐ Most Popular</span>
+        <div class="card-icon" aria-hidden="true">💎</div>
+        <h2 class="card-title">Pro</h2>
+        <p class="card-desc">Everything you need to scale your business.</p>
+        <div class="price">
+          <span class="price-currency">$</span>
+          <span class="price-amount">40</span>
+          <span class="price-period">/month</span>
+        </div>
+        <p class="save-note"></p>
+        <ul class="features">
+          <li>Unlimited projects</li>
+          <li>Real-time analytics</li>
+          <li>Priority support</li>
+          <li>100 GB storage</li>
+        </ul>
+        <button class="btn btn-solid">Choose Pro</button>
+      </article>
+
+      <article class="card" data-category="premium" data-monthly="80" data-yearly="768" data-name="Enterprise">
+        <div class="card-icon" aria-hidden="true">🏢</div>
+        <h2 class="card-title">Enterprise</h2>
+        <p class="card-desc">Advanced control and support for large teams.</p>
+        <div class="price">
+          <span class="price-currency">$</span>
+          <span class="price-amount">80</span>
+          <span class="price-period">/month</span>
+        </div>
+        <p class="save-note"></p>
+        <ul class="features">
+          <li>Everything in Pro</li>
+          <li>Custom integrations</li>
+          <li>24/7 dedicated support</li>
+          <li>1 TB storage</li>
+        </ul>
+        <button class="btn btn-outline">Choose Enterprise</button>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Small message shown when a plan is chosen -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>v
